@@ -1,15 +1,18 @@
 <div class="cont_principal">
     <div class="cont_centrar">
+        <div class="login_header">
+            <img src="assets/user.svg" id="login_logo">
+        </div>
         <div class="cont_login">
             <form [formGroup]="loginForm">
                 <div class="cont_tabs_login">
                     <ul class='ul_tabs'>
                         <li class="active">
-                            <div class="tabLink" (click)="sign_in()">SIGN IN</div>
+                            <div class="tabLink" (click)="sign_in_UI()">SIGN IN</div>
                             <span class="linea_bajo_nom"></span>
                         </li>
                         <li>
-                            <div class="tabLink" (click)="sign_up()">SIGN UP</div>
+                            <div class="tabLink" (click)="sign_up_UI()">SIGN UP</div>
                             <span class="linea_bajo_nom"></span>
                         </li>
                     </ul>
@@ -22,17 +25,17 @@
                     <input type="password" formControlName="password1" class="input_form_sign d_block  active_inp" placeholder="PASSWORD" name="pass_us" />
                     <input type="password" formControlName="password2" class="input_form_sign" placeholder="CONFIRM PASSWORD" name="conf_pass_us" />
 
-                    <span class="link_forgot_pass d_block"> Forgot Password ?</span>
+                    <span class="link_forgot_pass d_block" (click)="reset_UI()"> Forgot Password ?</span>
+                    <span class="link_forgot_pass_back d_none" (click)="sign_in_UI()"> <--Back to Login</span>
                     <div class="terms_and_cons d_none">
                         <p>
                             <input type="checkbox" formControlName="TnC" name="terms_and_cons" />
                             <label for="terms_and_cons">Accept Terms and Conditions.</label>
                         </p>
-
                     </div>
                 </div>
                 <div class="cont_btn">
-                    <div class="btn_sign" (click)="login()">SIGN IN</div>
+                    <button type="submit" class="btn_sign" (click)="login()">SIGN IN</button>
                 </div>
             </form>
         </div>

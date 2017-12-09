@@ -16,12 +16,21 @@
     z-index: 1;
     background: #FFFFFF;
     max-width: 360px;
-    margin: 0 auto 100px;
+    margin: 0 auto;
     text-align: center;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
     float: left;
     background-image: linear-gradient(-226deg, #FFFFFF 8%, #EEF3F5 100%);
     transition: all 0.5s;
+}
+
+.login_header {
+    padding: 20px;
+    background-color: #00A4BB;
+}
+
+#login_logo {
+    height: 50px;
 }
 
 .cont_tabs_login {
@@ -51,7 +60,7 @@
 }
 
 .ul_tabs>.active>.tabLink {
-    color: #FF8383;
+    color: #00A4BB;
 }
 
 .linea_bajo_nom {
@@ -66,15 +75,36 @@
     position: relative;
     width: 100%;
     float: left;
-    background-color: #FF8383;
+    background-color: #00A4BB;
     height: 2px;
 }
+
+
+/* .field {
+    position: relative;
+    margin-bottom: 2em;
+}
+
+.label {
+    position: absolute;
+    height: 2rem;
+    line-height: 2rem;
+    bottom: 0;
+    color: #999;
+    transition: all .3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.input:focus+.label,
+.input:valid+.label {
+    transform: translateY(-100%);
+    font-size: 0.75rem;
+    color: #ccc;
+} */
 
 .cont_text_inputs {
     position: relative;
     float: left;
     width: 100%;
-    margin-top: 20px;
 }
 
 .input_form_sign {
@@ -92,6 +122,7 @@
     padding: 0px;
     opacity: 0;
     display: none;
+    transition: all 0.5s;
 }
 
 .active_inp {
@@ -102,28 +133,20 @@
 }
 
 .input_form_sign:focus {
-    border-bottom: 1px solid #FF8383;
+    border-bottom: 2px solid #00A4BB;
 }
 
-.form_additional_hidden {
-    opacity: 0;
-    top: -5px;
-}
-
-.form_additional_visible {
-    opacity: 1;
-    top: 5px;
-}
-
-.link_forgot_pass {
+.link_forgot_pass,
+.link_forgot_pass_back {
     position: relative;
     margin-top: 0px;
-    margin-left: 30%;
+    margin-left: 35%;
     text-decoration: none;
     color: #999;
     font-size: 13px;
     display: none;
     float: left;
+    cursor: pointer;
     transition: all 0.5s;
 }
 
@@ -138,7 +161,7 @@
     font-family: "Roboto", sans-serif;
     text-transform: uppercase;
     outline: 0;
-    background: #4CAF50;
+    background: #00A4BB;
     width: 100%;
     border: 0;
     padding: 15px 0px;
@@ -147,6 +170,13 @@
     -webkit-transition: all 0.3 ease;
     transition: all 0.3 ease;
     cursor: pointer;
+    margin-bottom: -2px;
+    font-weight: 600;
+    transition: all 0.5s;
+}
+
+.btn_sign:hover {
+    background: rgb(1, 185, 209);
 }
 
 .terms_and_cons {
@@ -158,10 +188,12 @@
 
 .d_none {
     display: none;
+    top: -5px;
 }
 
 .d_block {
     display: block;
+    top: 5px;
 }
 
 .cont_text_inputs>input:nth-child(1) {
