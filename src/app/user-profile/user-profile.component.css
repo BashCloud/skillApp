@@ -1,0 +1,49 @@
+.profile_header {
+    height: 150px;
+    width: 100%;
+    background-color: #00A4BB;
+}
+
+.user_pic {
+    width: 150px;
+    height: 150px;
+    float: left;
+}
+
+.user_pic img {
+    width: 100px;
+    margin: 25px;
+}
+
+.user_info {
+    height: 90px;
+    padding-top: 60px;
+    color: #fff;
+    position: relative;
+}
+
+.logoutBtn {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    cursor: pointer;
+    font-size: 20px;
+    transition: all .5s;
+    color: rgb(0, 225, 255);
+}
+
+.logoutBtn:hover {
+    transform: scale(1.2);
+    color: rgb(162, 241, 252);
+}
+
+.userName {
+    font-size: 25px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.userID {
+    font-size: 16px;
+    line-height: 20px;
+}

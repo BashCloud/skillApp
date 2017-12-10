@@ -1,9 +1,15 @@
-<a [routerLink]="['']" [routerLinkActive]="['router-link-active']" class="list-group-item" mat-button>
-  Home
-</a>
-<a [routerLink]="['/login']" [routerLinkActive]="['router-link-active']" class="list-group-item" mat-button>
-  Login
-</a>
-<a [routerLink]="['/profile']" [routerLinkActive]="['router-link-active']" class="list-group-item" mat-button>
-  profile
-</a>
+<div class="header_nav">
+    <div class="nav_left">
+        <a [routerLink]="['']" [routerLinkActive]="['router-link-active']" class="list-group-item" mat-button>
+            <i class="icon-list"></i>
+        </a>
+    </div>
+    <a [routerLink]="['/login']" [routerLinkActive]="['router-link-active']" class="list-group-item" mat-button>
+        <div class="nav_title">SkillApp</div>
+    </a>
+    <div class="nav_right">
+        <a [routerLink]="['/profile']" [routerLinkActive]="['router-link-active']" class="list-group-item" mat-button>
+            <i class="icon-user"></i>
+        </a>
+    </div>
+</div>

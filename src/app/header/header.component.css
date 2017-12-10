@@ -1,0 +1,44 @@
+.header_nav {
+    background-color: #00A4BB;
+    position: relative;
+    color: #fff;
+    line-height: 50px;
+}
+
+.header_nav a {
+    text-decoration: none;
+    color: rgb(193, 249, 255);
+    transition: all .5s;
+}
+
+.header_nav a:hover {
+    /* background-color: rgba(0, 0, 0, 0.3); */
+    color: #fff;
+}
+
+.nav_title {
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.nav_left,
+.nav_right {
+    position: absolute;
+    top: 0px;
+}
+
+.nav_left {
+    left: 0px;
+    font-size: 20px;
+    line-height: 20px;
+    padding: 15px;
+}
+
+.nav_right {
+    right: 0px;
+    padding: 10px;
+    font-size: 30px;
+    line-height: 30px;
+}
