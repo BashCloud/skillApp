@@ -1,0 +1,84 @@
+.skillsDiv {
+    background-color: #eff;
+    padding: 20px;
+    margin: 20px 0px;
+    border: 1px solid #00A4BB;
+    border-radius: 5px;
+}
+
+.ui-select-multiple {
+    background-color: #fff !important;
+    height: auto;
+    padding: 5px !important;
+    position: relative;
+    border: 1px solid #eee;
+}
+
+.ui-select-choices-row.active>a {
+    color: #fff;
+    text-decoration: none;
+    outline: 0;
+    background-color: #00A4BB !important;
+}
+
+.ui-select-choices-row>a {
+    font-size: 12px;
+    padding: 7px 20px !important;
+}
+
+.ui-select-match-item {
+    outline: 0;
+    margin: 0 3px 5px 0 !important;
+    background-color: #00A4BB;
+    color: #fff;
+    padding: 5px 10px;
+    font-size: 12px;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+.ui-select-search {
+    width: 100%;
+    padding: 0px 0px !important;
+    display: block;
+    margin: 0px !important;
+}
+
+.ui-select-match .close {
+    font-size: 16px;
+    vertical-align: middle;
+    color: #017e8f;
+    float: right;
+    cursor: pointer;
+}
+
+.ui-select-choices {
+    position: absolute;
+    top: 100%;
+    left: 0px;
+    background-color: #fff;
+    overflow: hidden;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+.skillBtns {
+    height: 30px;
+    margin: 12px 0px
+}
+
+.skillBtn {
+    padding: 7px 15px;
+    cursor: pointer;
+    display: inline-block;
+    float: right;
+    background-color: #00A4BB;
+    color: #fff;
+    margin: 8px 5px;
+    border-radius: 20px;
+}
+
+.skillBtn.inverseBtn {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    color: #999;
+}

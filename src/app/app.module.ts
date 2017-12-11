@@ -9,6 +9,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RoutingModule } from './routing/routing.module';
 import { SimpleNotificationsModule } from 'angular2-notifications';
+import {SelectModule} from 'ng2-select';
 
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
@@ -16,6 +17,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { LoginComponent } from './user/login/login.component';
+import { MyskillComponent } from './skiils/myskill/myskill.component';
 
 
 
@@ -25,6 +27,7 @@ import { LoginComponent } from './user/login/login.component';
     UserProfileComponent,
     LoginComponent,
     HeaderComponent,
+    MyskillComponent,
   ],
   imports: [
     BrowserModule,
@@ -36,6 +39,7 @@ import { LoginComponent } from './user/login/login.component';
     ReactiveFormsModule,
     HttpModule,
     BrowserAnimationsModule, 
+    SelectModule,
     SimpleNotificationsModule.forRoot()
   ],
   bootstrap: [AppComponent]

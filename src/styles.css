@@ -9,3 +9,9 @@
 a {
     text-decoration: none;
 }
+
+.content {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+}
