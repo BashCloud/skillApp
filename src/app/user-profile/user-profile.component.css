@@ -29,12 +29,12 @@
     cursor: pointer;
     font-size: 20px;
     transition: all .5s;
-    color: rgb(0, 225, 255);
+    color: rgb(162, 241, 252);
 }
 
 .logoutBtn:hover {
     transform: scale(1.2);
-    color: rgb(162, 241, 252);
+    color: #fff;
 }
 
 .userName {

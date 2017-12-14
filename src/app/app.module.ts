@@ -18,6 +18,7 @@ import { HeaderComponent } from './header/header.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { LoginComponent } from './user/login/login.component';
 import { MyskillComponent } from './skiils/myskill/myskill.component';
+import { ListSkillsComponent } from './skills/list-skills/list-skills.component';
 
 
 
@@ -28,6 +29,7 @@ import { MyskillComponent } from './skiils/myskill/myskill.component';
     LoginComponent,
     HeaderComponent,
     MyskillComponent,
+    ListSkillsComponent,
   ],
   imports: [
     BrowserModule,
@@ -42,6 +44,7 @@ import { MyskillComponent } from './skiils/myskill/myskill.component';
     SelectModule,
     SimpleNotificationsModule.forRoot()
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  providers: [ListSkillsComponent]
 })
 export class AppModule { }
