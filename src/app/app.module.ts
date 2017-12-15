@@ -19,6 +19,8 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 import { LoginComponent } from './user/login/login.component';
 import { MyskillComponent } from './skiils/myskill/myskill.component';
 import { ListSkillsComponent } from './skills/list-skills/list-skills.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { OthersInfoComponent } from './user/others-info/others-info.component';
 
 
 
@@ -30,6 +32,8 @@ import { ListSkillsComponent } from './skills/list-skills/list-skills.component'
     HeaderComponent,
     MyskillComponent,
     ListSkillsComponent,
+    DashboardComponent,
+    OthersInfoComponent,
   ],
   imports: [
     BrowserModule,

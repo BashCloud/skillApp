@@ -7,10 +7,4 @@ import { AuthService } from '../core/auth.service';
 })
 export class UserProfileComponent {
   constructor(public auth: AuthService) { }
-  register(){
-    console.log("Dude...");
-    this.auth.googleLogin();
-    // this.auth.emailSignUp("pulkit@tiedc.in","04101996");
-  
-  }
 }

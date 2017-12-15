@@ -1,0 +1,20 @@
+.dashboard-user,
+.allUsers {
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    margin: 20px;
+}
+
+.dashboard-user {
+    padding: 20px;
+    cursor: pointer;
+}
+
+.userRow {
+    padding: 10px 20px;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+}
+
+.userRow:hover {
+    background-color: #eee;
+}

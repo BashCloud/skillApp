@@ -8,7 +8,7 @@
         <div class="logoutBtn" title="Logout" (click)="auth.signOut()"><i class="icon-switch"></i></div>
     </div>
 </div>
-<div class="content">
+<div class="content" *ngIf="auth.user">
     <app-myskill>
 
     </app-myskill>

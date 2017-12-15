@@ -1,0 +1,18 @@
+<div class="profile_header" *ngIf="userDetails | async as user">
+    <div class="user_pic">
+        <img [src]="user.photoURL">
+    </div>
+    <div class="user_info">
+        <div class="userName">{{ user.displayName }}</div>
+        <div class="userID">{{ user.email }}</div>
+        <!-- <div class="logoutBtn" title="Logout" (click)="auth.signOut()"><i class="icon-switch"></i></div> -->
+    </div>
+</div>
+<div class="skillsList" title="Endrose Skills">
+    <div *ngFor="let skill of skills | async" class="skillRow">
+
+        <div class="plusCounts">{{skill.data.endorsements}}</div>
+        <div class="skillName">{{skill.id}}</div>
+
+    </div>
+</div>

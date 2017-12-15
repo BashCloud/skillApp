@@ -1,0 +1,11 @@
+<div class="dashboard-user" *ngIf="auth.user | async as user" [routerLink]="['/profile']">
+    <div>
+        {{user.displayName}}
+    </div>
+</div>
+
+<div class="allUsers">
+    <div class="userRow" *ngFor="let user of users | async" [routerLink]="['/user', user.id]">
+        {{user.data.displayName}} {{user.data.email}}
+    </div>
+</div>
