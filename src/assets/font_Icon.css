@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'PA';
-  src:  url('fonts/PA.eot?z2isjb');
-  src:  url('fonts/PA.eot?z2isjb#iefix') format('embedded-opentype'),
-    url('fonts/PA.ttf?z2isjb') format('truetype'),
-    url('fonts/PA.woff?z2isjb') format('woff'),
-    url('fonts/PA.svg?z2isjb#PA') format('svg');
+  src:  url('fonts/PA.eot?y6hcw1');
+  src:  url('fonts/PA.eot?y6hcw1#iefix') format('embedded-opentype'),
+    url('fonts/PA.ttf?y6hcw1') format('truetype'),
+    url('fonts/PA.woff?y6hcw1') format('woff'),
+    url('fonts/PA.svg?y6hcw1#PA') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -24,12 +24,35 @@ i {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-brand:before {
-  content: "\e902";
-  color: #4285f4;
+.icon-align-right2:before {
+  content: "\e90a";
+}
+.icon-chevron-right3:before {
+  content: "\e90b";
+}
+.icon-chevrons-right:before {
+  content: "\e907";
+}
+.icon-align-right:before {
+  content: "\e908";
+}
+.icon-chevron-right2:before {
+  content: "\e909";
+}
+.icon-chevron-thin-right:before {
+  content: "\e903";
+}
+.icon-chevron-small-right:before {
+  content: "\e904";
+}
+.icon-chevron-right:before {
+  content: "\e906";
 }
 .icon-user:before {
   content: "\e900";
+}
+.icon-home:before {
+  content: "\e901";
 }
 .icon-home:before {
   content: "\e901";
@@ -60,6 +83,9 @@ i {
 }
 .icon-cross:before {
   content: "\ea0f";
+}
+.icon-arrow-left2:before {
+  content: "\ea40";
 }
 .icon-google:before {
   content: "\ea88";

@@ -1,6 +1,9 @@
-<div class="dashboard-user" *ngIf="auth.user | async as user" [routerLink]="['/profile']">
+<div class="dashboard-user userRow" *ngIf="auth.user | async as user" [routerLink]="['/profile']">
     <div>
-        {{user.displayName}}
+        <img [src]="user.photoURL" class="userDP">
+        <span class="usersName">{{user.displayName}}</span>
+        <span class="usersMail">{{user.email}}</span>
+        <i class="icon-chevron-right rightIcon"></i>
     </div>
 </div>
 
@@ -9,5 +12,6 @@
         <img [src]="user.data.photoURL" class="userDP">
         <span class="usersName">{{user.data.displayName}}</span>
         <span class="usersMail">{{user.data.email}}</span>
+        <i class="icon-chevron-right rightIcon"></i>
     </div>
 </div>
