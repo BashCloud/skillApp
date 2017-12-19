@@ -77,6 +77,11 @@
     border-radius: 20px;
 }
 
+#newBtn {
+    float: none !important;
+    display: table;
+}
+
 .skillBtn.inverseBtn {
     background-color: #fff;
     border: 1px solid #ccc;

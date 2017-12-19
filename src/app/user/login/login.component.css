@@ -212,3 +212,32 @@
 .cont_text_inputs>input:nth-child(4) {
     transition-delay: 0.8s;
 }
+
+.OAuth_btn {
+    height: 30px;
+    font-size: 14px;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    bottom: 0px;
+    max-width: 360px;
+    width: 100%;
+    line-height: 30px;
+    float: left;
+    margin-top: 30px;
+    padding: 8px 0px;
+    text-align: center;
+}
+
+.OAuth_btns {
+    float: right;
+}
+
+.OAuth_btns i {
+    padding: 10px;
+    color: #777777;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.OAuth_btns i:hover {
+    color: #00A4BB;
+}

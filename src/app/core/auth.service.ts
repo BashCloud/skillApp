@@ -31,13 +31,31 @@ export class AuthService {
         })
   }
   googleLogin() {
-    console.log("hh");
+    const provider = new firebase.auth.GoogleAuthProvider()
+    return this.oAuthLogin(provider);
+  }
+  twitterLogin() {
+    const provider = new firebase.auth.TwitterAuthProvider()
+    return this.oAuthLogin(provider);
+  }
+  facebookLogin() {
+    const provider = new firebase.auth.FacebookAuthProvider()
+    return this.oAuthLogin(provider);
+  }
+  githubLogin() {
     const provider = new firebase.auth.GithubAuthProvider()
     return this.oAuthLogin(provider);
   }
   private oAuthLogin(provider) {
     return this.afAuth.auth.signInWithPopup(provider)
       .then((credential) => {
+        this.router.navigate(['/']);
+        localStorage.setItem('isLoggedIn','true');
+        console.log('welcome');
+        this._notify.success(
+          'Login Successfull',
+          'Welcome back to the Portal...',
+        )     
         this.updateUserData(credential.user,credential.user.displayName);
       })
   }
@@ -52,6 +70,7 @@ export class AuthService {
       displayName: userName,
       photoURL: URL
     }
+    userRef.collection('skills');
     return userRef.set(data)
   }
   emailSignUp(email:string, password:string,userName:string) {
@@ -85,9 +104,9 @@ export class AuthService {
           'Login Successfull',
           'Welcome back to the Portal...',
         )
-        this.updateUserData(user,user.displayName);
         localStorage.setItem('isLoggedIn','true')
         this.router.navigate(['/']);
+        this.updateUserData(user,user.displayName);
       })
       .catch(error => {
         this._notify.error(

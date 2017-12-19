@@ -14,10 +14,9 @@
 <ng-template #skillsList>
     <div class="skillsList" title="Modify Skills" (click)="switchEditMode(true)">
         <div *ngFor="let skill of skills | async" class="skillRow">
-
             <div class="plusCounts">{{skill.data.endorsements}}</div>
             <div class="skillName">{{skill.id}}</div>
-
         </div>
+        <div id="newBtn" class="skillBtn">Add New Skill</div>
     </div>
 </ng-template>

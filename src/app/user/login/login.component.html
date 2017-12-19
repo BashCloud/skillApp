@@ -39,5 +39,15 @@
                 </div>
             </form>
         </div>
+
+    </div>
+    <div class="OAuth_btn">
+        Login with:
+        <div class="OAuth_btns">
+            <i class="icon-google" (click)="auth.googleLogin()" title="Login with Google"></i>
+            <i class="icon-twitter" (click)="auth.twitterLogin()" title="Login with Twitter"></i>
+            <i class="icon-facebook" (click)="auth.facebookLogin()" title="Login with Facebook"></i>
+            <i class="icon-github" (click)="auth.githubLogin()" title="Login with GitHub"></i>
+        </div>
     </div>
 </div>
