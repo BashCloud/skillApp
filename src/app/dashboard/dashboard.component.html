@@ -6,6 +6,8 @@
 
 <div class="allUsers">
     <div class="userRow" *ngFor="let user of users | async" [routerLink]="['/user', user.id]">
-        {{user.data.displayName}} {{user.data.email}}
+        <img [src]="user.data.photoURL" class="userDP">
+        <span class="usersName">{{user.data.displayName}}</span>
+        <span class="usersMail">{{user.data.email}}</span>
     </div>
 </div>

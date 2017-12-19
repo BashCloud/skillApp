@@ -10,11 +10,32 @@
 }
 
 .userRow {
-    padding: 10px 20px;
+    padding: 5px 10px;
     border-bottom: 1px solid #eee;
     cursor: pointer;
+    vertical-align: middle;
+    height: 30px;
 }
 
 .userRow:hover {
     background-color: #eee;
+}
+
+.userDP {
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    display: inline-block;
+}
+
+.usersName,
+.usersMail {
+    display: inline-block;
+    height: 30px;
+    vertical-align: middle;
+}
+
+.usersMail {
+    font-size: 11px;
+    color: #777;
 }
