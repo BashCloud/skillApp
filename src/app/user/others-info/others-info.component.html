@@ -8,11 +8,11 @@
         <!-- <div class="logoutBtn" title="Logout" (click)="auth.signOut()"><i class="icon-switch"></i></div> -->
     </div>
 </div>
-<div class="skillsList" title="Endrose Skills">
-    <div *ngFor="let skill of skills | async" class="skillRow">
-
-        <div class="plusCounts">{{skill.data.endorsements}}</div>
-        <div class="skillName">{{skill.id}}</div>
-
+<div class="content">
+    <div class="skillsList" title="Endrose Skills">
+        <div *ngFor="let skill of skills | async" class="skillRow">
+            <div class="plusCounts">{{skill.data.endorsements}}</div>
+            <div class="skillName">{{skill.id}}</div>
+        </div>
     </div>
 </div>

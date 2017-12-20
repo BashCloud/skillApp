@@ -5,13 +5,7 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 
 interface Skill {
-  id: string; 
   title: string;
-  fest: string;
-  date: string;
-  venue: string;
-  time: string;
-  pubtime: string;
 }
 
 @Component({
@@ -22,7 +16,6 @@ interface Skill {
 })
 export class MyskillComponent implements OnInit {
   skillsCol: AngularFirestoreCollection<Skill>;
-  // notices: Observable<notice[]>;
   skills: any
 
   isFetching = true;
