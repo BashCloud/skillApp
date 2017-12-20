@@ -11,7 +11,7 @@
 <div class="content">
     <div class="skillsList" title="Endrose Skills">
         <div *ngFor="let skill of skills | async" class="skillRow" (click)="endrose(skill)">
-            <div class="plusCounts">{{skill.data.endorsements}}
+            <div class="plusCounts" [ngClass]="skill.isEndrosed == -1 ? 'endrosedN': 'endrosed'">{{skill.data.endorsements}}
                 <i class="icon-plus" *ngIf="skill.isEndrosed == -1"></i>
             </div>
             <div class="skillName">{{skill.id}}</div>

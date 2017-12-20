@@ -62,6 +62,12 @@
     position: relative;
 }
 
+.plusCounts.endrosed {
+    background-color: #00a4bb;
+    color: #ffffff;
+    /* border-color: #575757; */
+}
+
 .skillName {
     display: inline-block;
     padding: 0px 10px;
