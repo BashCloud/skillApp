@@ -114,6 +114,7 @@
     color: #00A4BB;
     border: 2px solid #00A4BB;
     text-align: center;
+    position: relative;
 }
 
 .skillName {

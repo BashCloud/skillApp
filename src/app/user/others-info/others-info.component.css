@@ -32,3 +32,55 @@
     font-size: 16px;
     line-height: 20px;
 }
+
+
+/* ================================================= */
+
+.skillsList {
+    cursor: pointer;
+}
+
+.skillRow {
+    margin: 10px 0px 0px;
+    width: 100%;
+    line-height: 30px;
+}
+
+.skillRow:nth-child(n+5) {
+    width: auto;
+    display: inline-block;
+}
+
+.plusCounts {
+    display: inline-block;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    color: #00A4BB;
+    border: 2px solid #00A4BB;
+    text-align: center;
+    position: relative;
+}
+
+.skillName {
+    display: inline-block;
+    padding: 0px 10px;
+}
+
+.plusCounts i {
+    background-color: #00A4BB;
+    color: #fff;
+    border-radius: 50%;
+    height: 15px;
+    width: 15px;
+    position: absolute;
+    bottom: -3px;
+    right: -3px;
+    transition: all .5s;
+    font-size: 6px;
+    line-height: 15px;
+}
+
+.skillRow:hover .plusCounts i {
+    transform: scale(1.2);
+}

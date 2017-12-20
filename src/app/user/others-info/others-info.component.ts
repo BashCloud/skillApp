@@ -61,4 +61,12 @@ export class OthersInfoComponent implements OnInit {
   ngOnDestroy() {
     this.sub.unsubscribe();
   }
+  endrose(skill){
+    const skillRef = this.afs.collection(this.skillsRef).doc(skill.id);
+    const skillData = { 'endroseBy' : skill.data.endroseBy || []};
+    skillData['endroseBy'].push(localStorage.getItem('UID'));
+    skillData['endorsements'] = skill.data.endorsements +1;
+    // console.log(skillData);
+    skillRef.update(skillData);
+  }
 }

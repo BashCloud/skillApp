@@ -10,8 +10,10 @@
 </div>
 <div class="content">
     <div class="skillsList" title="Endrose Skills">
-        <div *ngFor="let skill of skills | async" class="skillRow">
-            <div class="plusCounts">{{skill.data.endorsements}}</div>
+        <div *ngFor="let skill of skills | async" class="skillRow" (click)="endrose(skill)">
+            <div class="plusCounts">{{skill.data.endorsements}}
+                <i class="icon-plus"></i>
+            </div>
             <div class="skillName">{{skill.id}}</div>
         </div>
     </div>
