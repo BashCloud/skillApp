@@ -46,14 +46,14 @@ export class OthersInfoComponent implements OnInit {
         if(actions.length == 0){
           // this.isEmpty = true;
         }
-        // console.log(actions);
-        // this.mySkills = actions.map(a =>{
-        //   return a.payload.doc.id;
-        // })
         return actions.map(a => {
           const data = a.payload.doc.data()
-          const id = a.payload.doc.id;        
-          return { id, data };
+          const id = a.payload.doc.id; 
+          var isEndrosed = -1;  
+          if(data.endroseBy){ 
+            isEndrosed = data.endroseBy.indexOf(localStorage.getItem('UID'));  
+          }
+          return { id, data, isEndrosed};
         });
       });  
    });
@@ -64,9 +64,16 @@ export class OthersInfoComponent implements OnInit {
   endrose(skill){
     const skillRef = this.afs.collection(this.skillsRef).doc(skill.id);
     const skillData = { 'endroseBy' : skill.data.endroseBy || []};
-    skillData['endroseBy'].push(localStorage.getItem('UID'));
-    skillData['endorsements'] = skill.data.endorsements +1;
-    // console.log(skillData);
+
+    if(skill.isEndrosed == -1){ // not endrosed...
+      skillData['endroseBy'].push(localStorage.getItem('UID'));
+      skillData['endorsements'] = skill.data.endorsements +1;
+    }
+    else{
+      skillData['endroseBy'].splice(skill.isEndrosed);
+      skillData['endorsements'] = skill.data.endorsements -1;
+    }
+    // console.log(skill);
     skillRef.update(skillData);
   }
 }
