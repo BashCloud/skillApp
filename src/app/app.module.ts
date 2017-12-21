@@ -21,6 +21,7 @@ import { MyskillComponent } from './skiils/myskill/myskill.component';
 import { ListSkillsComponent } from './skills/list-skills/list-skills.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { OthersInfoComponent } from './user/others-info/others-info.component';
+import { HoverCardComponent } from './user/hover-card/hover-card.component';
 
 
 
@@ -34,6 +35,7 @@ import { OthersInfoComponent } from './user/others-info/others-info.component';
     ListSkillsComponent,
     DashboardComponent,
     OthersInfoComponent,
+    HoverCardComponent,
   ],
   imports: [
     BrowserModule,

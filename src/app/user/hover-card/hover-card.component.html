@@ -1,0 +1,18 @@
+<div class="hoverUser" *ngIf="userDetails | async as user" [routerLink]="isSelf==fasle ? ['/user', user.uid]: ['/profile']">
+    <img class="user_pic" [src]="user.photoURL" [title]="user.displayName" />
+    <div class="hovercard">
+        <div class="hovercard-container">
+            <div class="hovercard-arrow">
+            </div>
+            <div class="hovercard-box">
+                <div class="hovercard-body">
+                    <img class="user_pic_big" [src]="user.photoURL" />
+                    <div class="hover_text">{{user.displayName}}
+                        <div class="hover_mail">{{user.email}}</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

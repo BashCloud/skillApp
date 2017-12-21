@@ -121,3 +121,15 @@
     display: inline-block;
     padding: 0px 10px;
 }
+
+.skillRow:hover .plusCounts i {
+    transform: scale(1.2);
+}
+
+.endrosedBy {
+    float: right;
+}
+
+.endrosedUser {
+    outline: none;
+}
