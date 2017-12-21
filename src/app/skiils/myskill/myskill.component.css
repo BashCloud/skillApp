@@ -133,3 +133,13 @@
 .endrosedUser {
     outline: none;
 }
+
+.showDiv {
+    visibility: visible;
+    display: block;
+}
+
+.hideDiv {
+    display: none;
+    visibility: hidden;
+}

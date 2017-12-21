@@ -1,17 +1,16 @@
 <h3>What I'm good at: </h3>
-<div *ngIf="editSkill; then skillsDiv else skillsList">
-    <!-- template will replace this div -->
-</div>
-<ng-template #skillsDiv>
-    <div class="skillsDiv" *ngIf="editSkill">
+<!-- <div *ngIf="editSkill; then skillsDiv else skillsList">
+</div> -->
+<div id="skillsDiv" [ngClass]="(editSkill == false) ? 'hideDiv':'showDiv'">
+    <div class="skillsDiv">
         <ng-select class="skillsInput" [active]="mySkills" [multiple]="true" [items]="items" [disabled]="disabled" (data)="refreshValue($event)" (selected)="selected($event)" (removed)="removed($event)" placeholder="No skills selected"></ng-select>
         <div class="skillBtns">
             <div (click)="updateSkills()" class="skillBtn">Update</div>
             <div class="skillBtn inverseBtn" (click)="switchEditMode(false)">Cancel</div>
         </div>
     </div>
-</ng-template>
-<ng-template #skillsList>
+</div>
+<div id="skillsList" [ngClass]="(editSkill == true) ? 'hideDiv':'showDiv'">
     <div class="skillsList" title="Modify Skills" (click)="switchEditMode(true)">
         <div *ngFor="let skill of skills | async" class="skillRow">
             <div class="plusCounts">{{skill.data.endorsements}}</div>
@@ -24,4 +23,4 @@
         </div>
         <div id="newBtn" class="skillBtn">Add New Skill</div>
     </div>
-</ng-template>
+</div>

@@ -62,7 +62,7 @@ export class AuthService {
   private updateUserData(user,userName) {
     // Sets user data to firestore on login
     const userRef: AngularFirestoreDocument<any> = this.afs.doc(`users/${user.uid}`);
-    var URL = user.photoURL?user.photoURL:"assets/user.png";
+    var URL = user.photoURL?user.photoURL:"assets/dummyUser.png";
     localStorage.setItem('UID',user.uid);
     const data: User = {
       uid: user.uid,
@@ -79,7 +79,7 @@ export class AuthService {
         // this.authState = user
         user.updateProfile({
           displayName:userName,
-          photoURL:"assets/user.png"
+          photoURL:"assets/dummyUser.png"
         })
         this._notify.success(
           'Registration Successfull',

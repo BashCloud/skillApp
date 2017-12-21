@@ -18,7 +18,6 @@ import { HeaderComponent } from './header/header.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { LoginComponent } from './user/login/login.component';
 import { MyskillComponent } from './skiils/myskill/myskill.component';
-import { ListSkillsComponent } from './skills/list-skills/list-skills.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { OthersInfoComponent } from './user/others-info/others-info.component';
 import { HoverCardComponent } from './user/hover-card/hover-card.component';
@@ -32,7 +31,6 @@ import { HoverCardComponent } from './user/hover-card/hover-card.component';
     LoginComponent,
     HeaderComponent,
     MyskillComponent,
-    ListSkillsComponent,
     DashboardComponent,
     OthersInfoComponent,
     HoverCardComponent,
@@ -51,6 +49,5 @@ import { HoverCardComponent } from './user/hover-card/hover-card.component';
     SimpleNotificationsModule.forRoot()
   ],
   bootstrap: [AppComponent],
-  providers: [ListSkillsComponent]
 })
 export class AppModule { }

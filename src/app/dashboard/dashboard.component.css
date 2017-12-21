@@ -53,6 +53,12 @@
     transition: all 1s fade;
 }
 
+.rightIcon span {
+    font-size: 10px;
+    color: #ccc;
+    vertical-align: bottom;
+}
+
 .userRow:hover .rightIcon {
     color: #777;
     margin-right: -2px;
