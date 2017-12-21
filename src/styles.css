@@ -15,3 +15,40 @@ a {
     margin: auto;
     padding: 20px;
 }
+
+
+/* loader */
+
+.circle {
+    animation: spin 3s linear infinite both;
+    background: #00a4bb;
+    border-radius: 100vmax;
+    /* margin:calc(50vh - 5vmin) calc(50vw - 1vmin); */
+    /* Half the longest viewport width minus half the width/height of the circle. */
+    margin: 50vh calc(50vw - 1vmin);
+    height: 5vmin;
+    position: absolute;
+    width: 5vmin;
+}
+
+.circle+.circle {
+    animation: spin 3s linear 1s infinite both;
+    background: #00bb92;
+}
+
+.circle+.circle+.circle {
+    animation: spin 3s linear 2s infinite both;
+    background: #a991e5;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(360deg) translate(0vmax, -10vmax);
+    }
+    50% {
+        transform: rotate(180deg) translate(0vmax, 0vmax);
+    }
+    100% {
+        transform: rotate(0deg) translate(0vmax, -10vmax);
+    }
+}
