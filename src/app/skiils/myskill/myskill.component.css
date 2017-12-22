@@ -132,6 +132,7 @@
 
 .endrosedUser {
     outline: none;
+    display: inline-block;
 }
 
 .showDiv {

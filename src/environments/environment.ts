@@ -7,7 +7,7 @@ export const environment = {
   production: true,
   firebase: {
     apiKey: "AIzaSyBLc0zu1BhxWrO3udDvYKqu-uMJHyQdmpw",
-    authDomain: "skillapp-eee1f.firebaseapp.com",
+    authDomain: "auth.skillapp.co",
     databaseURL: "https://skillapp-eee1f.firebaseio.com",
     projectId: "skillapp-eee1f",
     storageBucket: "skillapp-eee1f.appspot.com",
