@@ -25,6 +25,8 @@ export class MyskillComponent implements OnInit {
   skillsRef = "users/"+this.UID+"/Skills/";
   public items:Array<string> = ['C','C++','Java','Designing','Data Analysis','Public Speaking','Photoshop','Git',
   'Accuracy','Adaptable','Administrative','Advising','Analysis','Analytical','Assembling Apparatus','Being Artistic/Creative','Being Thorough','Business Storytelling','Calculations','Challenging Employees','Classifying Records','Coaching Individuals','Collaboration','Communication','Compiling Statistics','Conducting Meetings','Conflict Resolution','Confronting Others','Construction','Consultation','Counseling','Creating Ideas','Creating Innovation','Creating New Solutions','Creating New Procedures','Creative Thinking','Critical Thinking','Customer Service','Decision Making','Defining Performance Standards','Defining Problems','Demonstrations','Detail Management','Dispensing Information','Editing','Emotional Control','Encouragement','Entertainment','Equipment Operation','Evaluating','Expression of Feelings','Financial Report Auditing','Fundraising','Goal Setting','Handling Complaints','Human Resources','Language Translation','Leadership','Learning','Listening','Locating Missing Documents/Information','Maintaining High Levels of Activity','Maintenance','Management','Managing Finances','Measuring Boundaries','Medical Assistance','Meeting Deadlines','Microsoft Office','Monetary Collection','Motivation','Multitasking','Negotiation','Networking','Nonverbal Communication','Numerical Analysis','Oration','Organizational','Organizational Management','Organizational Tasks','Overseeing Meetings','Overseeing Operation','Personal Interaction','Plan Development','Planning','Prediction','Preparing Written Documents','Principal Concept Knowledge','Prioritizing','Problem Solving','Promotions','Proposals','Proposal Writing','Public Relations','Public Speaking','Questioning Others','Reading Volumes','Reasoning','Regulating Rules','Rehabilitating Others','Remembering Facts','Reporting','Report Writing','Responsibility','Service','Scheduling','Screening Calls','Sketching','Supervision','Technical Support','Team Building','Teamwork','Time Management','Toleration','Training',
+  'Matlab','Programming ','Application Development','Analytics','Big Data','Business Analytics','Business Intelligence','Business Process Modeling','Cloud Computing','Communication','Content Strategy','Content Management','Configuration','Critical Thinking','Customer Support','Database','Data Analysis','Data Intelligence','Data Mining','Data Science','Data Strategy','Data Storage','Database Administration','Design','Desktop Support','Developer','Development','Documentation','Emerging Technologies','File Systems','Flexibility','Hardware','Help Desk','Implementation','Internet','Information Systems','Installation','Integrated Technologies','IT Manager','IT Optimization','IT Security','IT Soft Skills','IT Solutions','IT Support','Logical Thinking','Leadership','Linux','Management','Messaging','Methodology','Metrics','Microsoft Office','Mobile Applications','Motivation','Networks','Network Operations','Networking','Operating Systems','Operations','Organization','Presentation','Problem Solving','Product Development','Product Support','Product Management','Product Training','Project Management','Repairs','Reporting','Search Engine Optimization (SEO)','Security','Self Motivated','Self Starting','Servers','Software','Software Development','Software Engineering','Software Quality Assurance (QA)','Storage','Support','Systems Software','Team Building','Team Oriented','Teamwork','Tech Skills Listed by Job','Tech Support','Technical','Technology','Technical Services','Technical Support','Technical Writing','Testing','Tools','Time Management','Training','Troubleshooting','UI / UX','User Experience Design','Virtualization','Web','Web Development','Web Design','Work Independently',
+  'XML','C','JavaScript','SQL','HTML','UML',
 ];
   
   public mySkills:any = [];
@@ -34,7 +36,6 @@ export class MyskillComponent implements OnInit {
   ngOnInit() {
     this.skillsCol = this.afs.collection(this.skillsRef, 
       ref => ref.orderBy('endorsements', 'desc')
-        // .where('orgID', '==', localStorage.getItem('orgID'))
       )
     this.skills = this.skillsCol.snapshotChanges()
     .map(actions => {
@@ -60,9 +61,7 @@ export class MyskillComponent implements OnInit {
       this.addedList.push(value.id);
     }else{
       this.removedList.splice(index,1);
-    }
-    // console.log('Added value is: ', this.addedList);
-    // console.log('Removed List is: ', this.removedList);
+    };
   }
 
   public removed(value:any):void {
@@ -77,13 +76,6 @@ export class MyskillComponent implements OnInit {
   public refreshValue(value:any):void {
     this.mySkills = value;
   }
-
-  // public itemsToString(value:Array<any> = []):string {
-  //   return value
-  //     .map((item:any) => {
-  //       return item.text;
-  //     }).join(',');
-  // }
   private newSkill(ID){
     this.afs.collection(this.skillsRef).doc(ID).set({
       endorsements:0
@@ -94,17 +86,15 @@ export class MyskillComponent implements OnInit {
   }
   public updateSkills(){
     console.log("Updating Skills...");
-    // var UID = localStorage.getItem('UID');
     this.removedList.map(id => this.delItem(id));
     this.addedList.map(id => this.newSkill(id));
-    console.log('Added skills are: ', this.addedList);
-    console.log('Removed skills are: ', this.removedList);
+    // console.log('Added skills are: ', this.addedList);
+    // console.log('Removed skills are: ', this.removedList);
     this.editSkill = false;
     this.removedList = [];
     this.addedList = [];
   }
   public switchEditMode(mode){
-    // console.log(this.skills);
     this.editSkill = mode;
   }
 }
