@@ -1,24 +1,39 @@
-<div class="profile_header" *ngIf="userDetails | async as user">
-    <div class="content" style="padding:0px">
-        <div class="user_pic">
-            <img [src]="user.photoURL">
-        </div>
-        <div class="user_info">
-            <div class="userName">{{ user.displayName }}</div>
-            <div class="userID">{{ user.email }}</div>
+<div *ngIf="userDetails | async as user">
+    <div class="profile_header">
+        <div class="content" style="padding:0px">
+            <div class="user_pic">
+                <img [src]="user.photoURL">
+            </div>
+            <div class="user_info">
+                <div class="userName">{{ user.displayName }}</div>
+                <div class="userID">{{ user.email }}</div>
+            </div>
         </div>
     </div>
-</div>
-<div class="content">
-    <div class="skillsList" title="Endrose Skills">
-        <div *ngFor="let skill of skills | async" class="skillRow">
-            <div class="plusCounts" (click)="endrose(skill)" [ngClass]="skill.isEndrosed == -1 ? 'endrosedN': 'endrosed'">{{skill.data.endorsements}}
-                <i class="icon-plus" *ngIf="skill.isEndrosed == -1"></i>
+    <div class="content">
+        <div class="contentHead">
+            <h3>{{user.displayName | firstWord}} is good at: </h3>
+            <div class="endroseMore">
+                <form [formGroup]="newSkillForm" *ngIf="isRecomending">
+                    <input type="text" formControlName="newSkill" class="input_form_skill " placeholder="Input Skill" />
+                    <span class="cancelBtn" (click)="addNew()" class="submitBtn"><i class="icon-plus"></i> Add</span>
+                    <span class="cancelBtn" (click)="switchRecomending(false)" class="cancelBtn" title="Cancel"><i class="icon-cross"></i></span>
+                </form>
+                <div class="endroseMoreBtn" *ngIf="!isRecomending" (click)="switchRecomending(true)">
+                    <i class="icon-plus"></i> Endrose New Skill
+                </div>
             </div>
-            <div class="skillName" (click)="endrose(skill)">{{skill.id}}</div>
-            <div class="endrosedBy">
-                <div class="endrosedUser" *ngFor="let user of skill.data.endroseBy">
-                    <app-hover-card [UID]="user"></app-hover-card>
+        </div>
+        <div class="skillsList" title="Endrose Skills">
+            <div *ngFor="let skill of skills | async" class="skillRow">
+                <div class="plusCounts" (click)="endrose(skill)" [ngClass]="skill.isEndrosed == -1 ? 'endrosedN': 'endrosed'">{{skill.data.endorsements}}
+                    <i class="icon-plus" *ngIf="skill.isEndrosed == -1"></i>
+                </div>
+                <div class="skillName" (click)="endrose(skill)">{{skill.id}}</div>
+                <div class="endrosedBy">
+                    <div class="endrosedUser" *ngFor="let User of skill.data.endroseBy">
+                        <app-hover-card [UID]="User"></app-hover-card>
+                    </div>
                 </div>
             </div>
         </div>

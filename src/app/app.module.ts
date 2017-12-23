@@ -21,6 +21,7 @@ import { MyskillComponent } from './skiils/myskill/myskill.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { OthersInfoComponent } from './user/others-info/others-info.component';
 import { HoverCardComponent } from './user/hover-card/hover-card.component';
+import { GetFirstWord } from './core/firstWord.pipe';
 
 
 
@@ -34,6 +35,7 @@ import { HoverCardComponent } from './user/hover-card/hover-card.component';
     DashboardComponent,
     OthersInfoComponent,
     HoverCardComponent,
+    GetFirstWord
   ],
   imports: [
     BrowserModule,

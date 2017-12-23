@@ -58,6 +58,13 @@ export class AuthService {
         )     
         this.updateUserData(credential.user,credential.user.displayName);
       })
+      .catch(error => {
+        this._notify.error(
+          'Login Failed !!',
+          error.message,
+        )
+        console.log(error)
+      });
   }
   private updateUserData(user,userName) {
     // Sets user data to firestore on login

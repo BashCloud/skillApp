@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from 'angularfire2/firestore';
 import { Observable } from 'rxjs/Observable';
+import { FormBuilder, Validators } from '@angular/forms';
 
 interface User {
   displayName:string
@@ -18,13 +19,17 @@ interface Skill {
 export class OthersInfoComponent implements OnInit {
   id: string;
   private sub: any;
+  isRecomending = false;
   userRef:string;
   userDoc: AngularFirestoreDocument<User>;
   userDetails: Observable<User>;
   skillsCol: AngularFirestoreCollection<Skill>;
   skills: any;
   skillsRef: string;
-  constructor(private route: ActivatedRoute,private afs: AngularFirestore) { 
+  public newSkillForm = this.fb.group({
+    newSkill: ["", Validators.required]
+  });
+  constructor(private route: ActivatedRoute,private afs: AngularFirestore,public fb: FormBuilder) { 
    }
 
   ngOnInit() {
@@ -65,7 +70,7 @@ export class OthersInfoComponent implements OnInit {
     const skillRef = this.afs.collection(this.skillsRef).doc(skill.id);
     const skillData = { 'endroseBy' : skill.data.endroseBy || []};
 
-    if(skill.isEndrosed == -1){ // not endrosed...
+    if(skill.isEndrosed == -1){ // not endrosed before...
       skillData['endroseBy'].push(localStorage.getItem('UID'));
       skillData['endorsements'] = skill.data.endorsements +1;
     }
@@ -75,5 +80,20 @@ export class OthersInfoComponent implements OnInit {
     }
     // console.log(skill);
     skillRef.update(skillData);
+  }
+
+  switchRecomending(state){
+    this.isRecomending =state;
+  }
+
+  addNew(){
+    
+    var skill = this.newSkillForm.value.newSkill;
+    this.afs.collection(this.skillsRef).doc(skill).set({
+      endorsements:1,
+      endroseBy:[localStorage.getItem('UID')],
+    });
+    console.log(skill);
+    this.isRecomending = false;
   }
 }
